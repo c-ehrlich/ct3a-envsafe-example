@@ -7,7 +7,7 @@ import { envsafe, str, url } from "envsafe";
 import { clientEnv } from "./clientEnv.mjs";
 
 if (typeof window !== "undefined") {
-  throw new Error("This should only be included on the client");
+  throw new Error("This should only be included on the server");
 }
 
 export const serverEnv = {
