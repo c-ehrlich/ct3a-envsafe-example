@@ -12,20 +12,15 @@ if (typeof window !== "undefined") {
 
 export const serverEnv = {
   ...clientEnv,
-  ...envsafe(
-    {
-      DATABASE_URL: url(),
-      NODE_ENV: str({
-        devDefault: "development",
-        choices: ["development", "test", "production"],
-      }),
-      NEXTAUTH_SECRET: str(),
-      NEXTAUTH_URL: url(),
-      DISCORD_CLIENT_ID: str(),
-      DISCORD_CLIENT_SECRET: str(),
-    },
-    {
-      strict: true,
-    }
-  ),
+  ...envsafe({
+    DATABASE_URL: url(),
+    NODE_ENV: str({
+      devDefault: "development",
+      choices: ["development", "test", "production"],
+    }),
+    NEXTAUTH_SECRET: str(),
+    NEXTAUTH_URL: url(),
+    DISCORD_CLIENT_ID: str(),
+    DISCORD_CLIENT_SECRET: str(),
+  }),
 };
